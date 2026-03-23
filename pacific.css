@@ -177,8 +177,8 @@ footer {
 
 }
 #aboutushero {
-    background-image: url(images/teamwork.jpg);
-    outline: 2px solid #000032;>
+    background-image: url(images/wereachedthetop.jpg);
+    outline: 2px solid #000032;
     width: 95%;
     margin: auto;
 }
@@ -253,7 +253,7 @@ label{
     color: #003;
 }
 input, 
-textarea,
+textarea
  {
     margin-bottom: 0;
     padding: 0.5em;
@@ -309,7 +309,7 @@ margin-bottom: 2em;
 /* video styling */
 .content-row video {
 flex: 0 0 320px;
-margin: em;
+margin: 1em;
 max-width: 100%
 border-radius: 0.5em;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -344,11 +344,14 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 /* Images   Changes image size, height, and width */
 .gallery-image img {
-    width: 45%;
+    width: 75%;
     height: auto;
     display: block;
     object-fit: cover;
     transition: transform 0.3s ease;
+}
+img {
+    overflow: clip;
 }
 /* Figcaption overlay--> Removed because it was causing issue with text code */
 .gallery-image figcaption{
@@ -365,6 +368,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     transition: opacity 0.3s ease;
     transform: translateY(20%);
 }
+
 /* Hover effect for gallery images  */
 .gallery-image:hover figcaption {
     opacity: 1;
@@ -394,7 +398,7 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 }
 /* supposed to change the yurts packages */
-@media(max-width: 32.5rem) { 
+@media (max-width: 32.5rem) { 
    body { 
     background-image: none;
     border: none;
@@ -408,46 +412,58 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin: 0;
     padding: 0;
 }
+
 header{
     background-image: none;
     padding: 0;
 }
+
 footer{
     padding: 1em;
-    }
-     #special table{
-        margin: 0 auto;
-    }
-    #special td, #special th {
-        display: block;
-        width: 100%;
-    }
-   #special td {
+}
+
+#special table{
+    margin: 0 auto;
+}
+
+#special td, #special th {
+    display: block;
+    width: 100%;
+}
+
+#special td {
     height: 0;
     margin: 0;
     padding: 0;
-    font-size: 625rem;
-    border: none
+    font-size: 0;
+    border: none;
     overflow: hidden;
-   }
-   td.package: :before{
-    content: 'package: ';
-   }
-td.description: :before {
-    content: "description:";
 }
-td.nights: :before{
-    content: "nights: ";
+
+/* FIXED pseudo-elements */
+td.package::before{
+    content: 'Package: ';
 }
-td.cost: :before{
-    content: "cost";
+
+td.description::before {
+    content: "Description: ";
 }
+
+td.nights::before{
+    content: "Nights: ";
+}
+
+td.cost::before{
+    content: "Cost: ";
+}
+
 .package, .description, .nights, .cost{
-width: 100%;
-padding-left: 35%;
-position: relative;
-text-align-last: left;
-    } 
+    width: 100%;
+    padding-left: 35%;
+    position: relative;
+    text-align: left;
+} 
+
 td::before {
     width: 25%;
     display: block;
@@ -473,9 +489,9 @@ form textarea {
 
 input[type="submit"] {
     width: 100%;
-    margin-top: 0.5em
+    margin-top: 0.5em;
 }
-
+}
 @media (min-width: 37.5rem) {
     nav ul {
         flex-direction: row;
@@ -489,7 +505,7 @@ nav li {
     max-width: none;
 }
 @media (min-width: 36.5rem) {
-nav li{
+    nav li{
     border-bottom: none;
     padding: 0 1rem;
     max-width: none;
@@ -505,5 +521,3 @@ nav li{
     max-width: 100%;
     }
 }
-
-
